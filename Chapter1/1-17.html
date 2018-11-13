@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES 6 String</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.4/es6-shim.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        //
+        var str = "Mockingbirds don't do one thing except make music "+
+        "for us to enjoy. They don't eat up people's gradens, "+
+        "don't nest in corn cribs, "+
+        "they don't do one thing but sing their hearts out for us. "+
+        "That's why it's a sin to kill a mockingbird."
+
+        console.log(str.startsWith("Mockingbirds")); // true
+        console.log(str.startsWith("autos", 20)); // false
+
+        console.log(str.startsWith("Mockingbird.")); // true
+        console.log(str.startsWith("kill",str.length-15)); // true
+
+        var cp = str.codePointAt(50);
+        var cp2 = str.codePointAt(51);
+        var cp3 = str.codePointAt(52);
+        var str2 = String.fromCodePoint(cp,cp2,cp3);
+
+        console.log(str2);
+    </script>
+</body>
+</html>
