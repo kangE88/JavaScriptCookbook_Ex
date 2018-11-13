@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //문자열 목록 추출하기
+        var sentence = 'This is one sentence. This is a sentence with a list of items:' +
+        'cherries, oranges, apples, bananas. That was the list of items.';
+        
+        var start = sentence.indexOf(':');
+        var end = sentence.indexOf('.', start+1);
+        
+        var listStr = sentence.substring(start+1, end);
+        //var fruits = sentence.substring(start+1, end).split(",");
+        //console.log(fruits);
+
+        /*
+        //case1
+        var listStr = sentence.substring(start+1, end);
+        var fruits = listStr.split(',');
+        //console.log(fruits);
+        */
+        /*
+        //case2
+        var listStr = sentence.substr(start+1, end-start);
+        var fruits = listStr.split(',');
+        console.log(fruits);
+        */
+       
+        //case3
+        fruits = listStr.split(',');
+        console.log("공백"+fruits); 
+
+        fruits.forEach(function(elmnt,indx,arry) {
+                console.log("elmnt==>"+elmnt);
+                console.log("indx==>"+indx);
+                console.log("arry==>"+arry);
+                arry[indx] = elmnt.trim();
+        });
+        
+        console.log("공백제거"+fruits); 
+
+        //var fruits = listStr.split(/\s*,\s*/);
+        //console.log("-2->"+fruits);
+    </script>
+</body>
+</html>

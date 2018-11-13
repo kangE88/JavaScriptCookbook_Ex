@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //문자열 존재 하는지 또는 빈문자열인지 검사
+        var str = new String('test');
+        var str1;
+        var str2 = 'test';
+
+        console.log(typeof str != 'undefined');
+
+        //object 는 생성했으나, 값은 없으니 log 메세지가 나타난다.
+        if (str1 == null) {
+            console.log('bad variable');
+        }
+        //
+        doSomething(str);
+        doSomething(str2);
+
+        function doSomething(passedString) {
+            if (passedString == 'test') {
+                console.log("ok");
+            }
+        }
+
+    </script>
+</body>
+</html>

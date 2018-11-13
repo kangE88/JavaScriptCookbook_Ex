@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body id="result">
+    
+    <script>
+    var resultString = "<p>This page \u00A9 Shelley Powers </p>";    
+
+    //페이지 특수문자 출력 \u00A9
+    var blk = document.getElementById("result");
+
+    blk.innerHTML = resultString;
+    
+    //정규식을 이용한 문자 변경
+    var searchString = "Now is the time, this is the tame";
+    var re = /t\w{2}e/g;
+    var replacement = searchString.replace(re, "place");
+
+    console.log(replacement);
+
+    //RegExp 정규식의 exec()를 이용한 문자 변경
+    var searchString = "Now is the time and this is the time and that is the time";
+    var patten = /t\w*e/g;
+    var matchArray;
+
+    var str = "";
+
+    //regexp exec로 패턴 확인, null이 아니면 실행
+    while ((matchArray = patten.exec(searchString)) != null) {
+        str+="at " + matchArray.index + " we found " + matchArray[0] + "\n";
+    }
+
+    console.log("Str===>"+str);
+
+
+    //
+    var re = /a(p+).*(pie)/ig;
+    var result = re.exec("The apples in the apple pie are tart");
+
+    console.log("result==>"+result);
+    console.log("result.index==>"+result.index);
+    console.log("result.input==>"+result.input);
+
+    </script>
+</body>
+</html>

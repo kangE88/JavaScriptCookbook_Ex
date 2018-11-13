@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>경과 시간 구하기</title>
+</head>
+<body>
+    <script>
+        var firstDate = new Date();
+
+        console.log("firstDate1==>"+firstDate);
+        
+        setTimeout(function () {
+            doEvent(firstDate);
+            console.log("firstDate2==>"+firstDate);
+        }, 25000);
+
+        function doEvent() {
+            var secondDate = new Date();
+            console.log("secondDate==>"+secondDate);
+            var diff = secondDate - firstDate;
+            console.log(diff); // approx. 25000
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>문자열 검색</title>
+    <style>
+    .found{
+        background-color: #ff0;
+    }
+    </style>
+</head>
+<body>
+    <form id="textsearch">
+        <textarea id="incoming" cols="150" rows="10">
+            The  one two three leave, hive, leaf Discover interesting projects and people to populate your personal news feed.
+            Your news feed helps you keep up with recent activity on repositories you watch and people you follow.
+        </textarea>
+        <p>
+            Search pattern: <input id="pattern" type="text"/>
+        </p>
+    </form>
+    <button id="searchSubmit">Search for pattern</button>
+    <div id="searchResult"></div>
+    <script>
+        document.getElementById("searchSubmit").onclick=function(){
+            //alert("click");
+            //패턴 구하기
+            var pattern = document.getElementById("pattern").value;
+            var re = new RegExp(pattern, "g");
+
+            alert(re);
+
+            //문자열 구하기
+            var searchString = document.getElementById("incoming").value;
+            
+            //치환
+            var resultString = searchString.replace(re,"<span class='found'>$&</span>");
+
+            //페이지삽입
+            document.getElementById("searchResult").innerHTML = resultString;
+
+
+            //문자열 단어 교환
+            var name = "Abe Lincoln";
+            var re = /^(\w+)\s(\w+)$/;
+            var result = re.exec(name);
+            var newname = result[2] + ", " + result[1];
+
+            alert(newname);
+        }
+    </script>
+</body>
+</html>
